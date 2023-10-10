@@ -1,5 +1,5 @@
 import * as s from "./shears";
-import t from "typeofit";
+import * as t from "typeofit";
 
 const resultGuard = t.struct({
   link: t.string,
