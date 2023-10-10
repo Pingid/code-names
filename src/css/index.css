@@ -1,0 +1,70 @@
+@import "./font.css";
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --back: #fff;
+    --front: #333;
+  }
+
+  [data-dark-mode] {
+    --back: #333;
+    --front: #fff;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --back: #333;
+      --front: #fff;
+    }
+  }
+
+  @media (max-width: 800px) {
+    :root {
+      --text-size: 0.8;
+      --text-1: 1rem;
+      --text-2: 1.25rem;
+      --text-3: 1.93rem;
+      --text-4: 6.312rem;
+    }
+  }
+
+  @media (max-width: 480px) {
+    :root {
+      --text-1: 1rem;
+      --text-2: 1.2rem;
+      --text-3: 1.4rem;
+      --text-4: 2.312rem;
+    }
+  }
+
+  body {
+    background-color: var(--back);
+    color: var(--front);
+  }
+
+  *,
+  ::before,
+  ::after {
+    border-color: var(--fg2-color);
+  }
+
+  p,
+  a,
+  input,
+  button {
+    @apply text-base;
+  }
+  h1 {
+    @apply text-2xl leading-none;
+  }
+  h2 {
+    @apply text-xl;
+  }
+  h3 {
+    @apply text-lg;
+  }
+}
